@@ -110,3 +110,230 @@
         }
 
         .card h3 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #0d0f12;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            color: #ffffff;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .experience-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .experience-item h3 {
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .experience-item .role {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .experience-item .date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Harvey Andrei S. Mendiola</h1>
+            <p class="subtitle">Social Media Manager & Content Editor</p>
+            <div class="contact-info">
+                <span>📍 Paombong, Bulacan, Philippines</span>
+                <span>📧 <a href="mailto:handrei860@gmail.com">handrei860@gmail.com</a></span>
+                <span>📞 <a href="tel:09453161049">0945-316-1049</a></span>
+                <span>📸 <a href="https://instagram.com/harveyandreii123" target="_blank">@harveyandreii123</a></span>
+            </div>
+        </header>
+
+        <!-- Pitch & About Section -->
+        <section>
+            <h2>About Me</h2>
+            <p class="about-text">
+                I help creators, brands, and businesses turn raw footage into high-engaging viral content tailored specifically to their niche. With a proven track record of reaching over <strong>1.7 Million views</strong> on short-form content, I focus on capturing attention within the first few seconds.
+            </p>
+            <p class="about-text">
+                My specialty lies in repurposing long-form content—such as full podcasts, live coaching sessions, and vlogs—into bite-sized, high-retention Reels and TikToks. Beyond video editing, I handle end-to-end media creation including eye-catching thumbnails, photo editing, and short film production.
+            </p>
+        </section>
+
+        <!-- Featured Projects / Portfolio Section -->
+        <section>
+            <h2>Featured Work & Portfolio</h2>
+            <div class="grid">
+
+                <!-- Project 1: 1.7M Views Reel -->
+                <div class="card">
+                    <span class="badge">🔥 1.7M+ Views Viral Reel</span>
+                    <h3>High-Engagement Short Reel</h3>
+                    <p>Designed and edited for maximum viewer retention and viral reach, tailored to the target audience niche.</p>
+                    <a href="https://www.instagram.com/reel/DaNrYO7kw2H/?stkn=aXowdXB2c2cxeXNu" target="_blank" class="btn">▶ Watch Reel</a>
+                </div>
+
+                <!-- Project 2: Podcast Editing -->
+                <div class="card">
+                    <span class="badge">🎙️ Long-Form Podcast Edit</span>
+                    <h3>Full Podcast Episode Production</h3>
+                    <p>Complete multi-angle podcast audio & video editing with pacing adjustments and clean visual cuts.</p>
+                    <a href="https://youtu.be/Kz7ZcUv4xYM?feature=shared" target="_blank" class="btn">▶ Watch on YouTube</a>
+                </div>
+
+                <!-- Project 3: Real Estate / Home Tour -->
+                <div class="card">
+                    <span class="badge">🏠 Real Estate / Vlog Edit</span>
+                    <h3>Exclusive Home Tour Reel</h3>
+                    <p>Engaging walkthrough video showcasing luxury property aesthetics with dynamic pacing and music sync.</p>
+                    <a href="https://www.instagram.com/reel/DWOz6JignzW/?stkn=Z2Y4bmh0OW93Z2Rw" target="_blank" class="btn">▶ Watch Reel</a>
+                </div>
+
+                <!-- Project 4: Live Coaching Repurpose -->
+                <div class="card">
+                    <span class="badge">🎓 Live Coaching Content</span>
+                    <h3>Coaching Session to Short Reel</h3>
+                    <p>Repurposed key insights from a live coaching session into a digestible, value-packed short video.</p>
+                    <a href="https://www.instagram.com/reel/DWjXTutiGkq/?stkn=NGR4dmlwY2cxMXY1" target="_blank" class="btn">▶ Watch Reel</a>
+                </div>
+
+                <!-- Project 5: Creative Short Reel -->
+                <div class="card">
+                    <span class="badge">🎬 Content Creation</span>
+                    <h3>Social Media Reel Edit</h3>
+                    <p>Short-form creative video edit featuring smooth transitions and engaging visual pacing.</p>
+                    <a href="https://www.instagram.com/reel/DRUya81gF4s/?stkn=YnZpNWo3amc4amdz" target="_blank" class="btn">▶ Watch Reel</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Services & Skillset -->
+        <section>
+            <h2>Core Skills & Capabilities</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Short-Form Video Editing (Reels/TikTok)</span>
+                <span class="skill-tag">Podcast Editing & Content Repurposing</span>
+                <span class="skill-tag">Live Coaching Highlights & Clipping</span>
+                <span class="skill-tag">Vlog Editing & Storytelling</span>
+                <span class="skill-tag">Short Films Production</span>
+                <span class="skill-tag">Eye-Catching Thumbnail Design</span>
+                <span class="skill-tag">Photo Editing & Graphic Assets</span>
+                <span class="skill-tag">Audience Engagement Strategy</span>
+                <span class="skill-tag">Administrative & Spreadsheets Support</span>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section>
+            <h2>Work Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Virtual Assistant & Digital Media Support</h3>
+                <p class="role">Tanur Badgely</p>
+                <p class="date">September 2024 - May 2026</p>
+                <ul>
+                    <li>Managed and maintained spreadsheets, ensuring accurate, timely, and well-organized data.</li>
+                    <li>Organized digital files, folders, and media records for efficient retrieval and management.</li>
+                    <li>Managed calendars, appointments, and meeting schedules to prevent overlapping commitments.</li>
+                    <li>Provided administrative support through data organization, deadline reminders, and prompt client communication.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2>Education & Achievements</h2>
+            <div class="experience-item">
+                <h3>Accountancy Business Management (ABM) Strand</h3>
+                <p class="date">School Year: 2025 - 2026</p>
+                <ul>
+                    <li><strong>Best Research Presentation Award:</strong> "Seating Matters: A Meta-analysis of the effects of seating arrangements on the learning ability of senior high school students."</li>
+                    <li><strong>Consistent Honor Student:</strong> Grades 11 - 12</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Harvey Andrei S. Mendiola. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

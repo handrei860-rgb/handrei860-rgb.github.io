@@ -3,239 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor Portfolio | Handrei</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Harvey Andrei S. Mendiola | Video Editor & Social Media Manager</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
+            --bg-color: #0d0f12;
+            --card-bg: #161a23;
+            --text-color: #e2e8f0;
             --text-muted: #94a3b8;
-            --accent: #38bdf8;
+            --accent-color: #38bdf8;
             --accent-hover: #0284c7;
+            --border-color: #1e293b;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-main);
+            color: var(--text-color);
             line-height: 1.6;
             padding: 20px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
         }
 
         header {
-            margin-bottom: 50px;
-            text-align: left;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            margin-bottom: 10px;
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 8px;
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            color: var(--accent);
+            color: var(--accent-color);
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 15px;
         }
 
-        .bio {
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
             color: var(--text-muted);
-            font-size: 1rem;
-            max-width: 600px;
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
         }
 
         section {
-            margin-bottom: 50px;
+            margin: 40px 0;
         }
 
         h2 {
             font-size: 1.5rem;
+            color: #ffffff;
             margin-bottom: 20px;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .service-card {
-            background-color: var(--card-bg);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #334155;
-        }
-
-        .service-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: var(--accent);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 20px;
-            border: 1px solid #334155;
-            transition: transform 0.2s ease;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-3px);
-        }
-
-        .portfolio-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-
-        .portfolio-item p {
+        .about-text {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             margin-bottom: 15px;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: #0f172a;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.2s ease;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        .btn:hover {
-            background-color: var(--accent-hover);
-            color: #ffffff;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .contact-btn {
+        .card {
             background-color: var(--card-bg);
-            color: var(--text-main);
-            padding: 10px 18px;
-            border-radius: 6px;
-            text-decoration: none;
-            border: 1px solid #334155;
-            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
-        .contact-btn:hover {
-            border-color: var(--accent);
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
         }
 
-        footer {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 60px;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .container { padding: 20px 10px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <!-- HEADER / ABOUT ME -->
-        <header>
-            <h1>Handrei</h1>
-            <div class="subtitle">Professional Editor</div>
-            <p class="bio">
-                Passionate about bringing stories to life through precise editing, seamless pacing, and engaging visuals. Specializing in high-quality video and content editing for brands and creators.
-            </p>
-        </header>
-
-        <!-- SERVICES -->
-        <section>
-            <h2>What I Do</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Video Editing</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">YouTube content, Short-form reels, TikToks, and Commercials.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Color Grading</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Enhancing the visual aesthetic and tone of your footage.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Content Strategy</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Structuring stories for maximum audience engagement.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PORTFOLIO / FEATURED WORKS -->
-        <section>
-            <h2>Featured Projects</h2>
-            <div class="portfolio-grid">
-                
-                <div class="portfolio-item">
-                    <h3>Project Name 1</h3>
-                    <p>A short description of what you edited here. Mention the tools used (e.g., Premiere Pro, CapCut, DaVinci Resolve) and the results achieved.</p>
-                    <a href="https://youtube.com" target="_blank" class="btn">Watch Project</a>
-                </div>
-
-                <div class="portfolio-item">
-                    <h3>Project Name 2</h3>
-                    <p>Briefly explain your editing style or what made this project special (e.g., fast-paced vlog editing, motion graphics, or sound design).</p>
-                    <a href="https://drive.google.com" target="_blank" class="btn">View Work</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section>
-            <h2>Let's Work Together</h2>
-            <div class="contact-links">
-                <a href="mailto:your-email@gmail.com" class="contact-btn">Email Me</a>
-                <a href="https://instagram.com" target="_blank" class="contact-btn">Instagram</a>
-                <a href="https://linkedin.com" target="_blank" class="contact-btn">LinkedIn</a>
-            </div>
-        </section>
-
-        <footer>
-            <p>© 2026 Handrei. Hosted on GitHub Pages.</p>
-        </footer>
-    </div>
-
-</body>
-</html>
+        .card h3 {

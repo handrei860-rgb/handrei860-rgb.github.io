@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0b130e;          /* Deep Forest Dark */
-            --card-bg: #132018;            /* Dark Emerald Card */
-            --card-hover: #1a2c22;
-            --text-color: #e6ede8;         /* Crisp White-Green */
-            --text-muted: #94a89a;         /* Soft Sage Muted */
-            --accent-green: #34d399;       /* Vibrant Mint Emerald */
-            --accent-sage: #10b981;        /* Forest Sage */
-            --border-color: #1f3829;       /* Deep Olive Border */
-            --nav-bg: rgba(11, 19, 14, 0.85);
+            --bg-color: #f4f7f5;          /* Soft Clean Light Gray/Green */
+            --card-bg: rgba(255, 255, 255, 0.75); /* Glassmorphism Semi-Transparent White */
+            --card-hover: rgba(255, 255, 255, 0.95);
+            --text-color: #1a2e22;         /* Deep Forest Dark Text */
+            --text-muted: #4a6353;         /* Muted Earthy Green */
+            --accent-green: #059669;       /* Vibrant Forest Emerald */
+            --accent-dark: #022c22;        /* Dark Emerald Accent */
+            --border-color: rgba(5, 150, 105, 0.15); /* Soft Glass Border */
+            --nav-bg: rgba(244, 247, 245, 0.85);
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 15px 35px rgba(5, 150, 105, 0.12);
         }
 
         * {
@@ -32,6 +34,8 @@
             color: var(--text-color);
             line-height: 1.6;
             padding-top: 80px;
+            background-image: radial-gradient(circle at 10% 20%, rgba(5, 150, 105, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
         }
 
         .container {
@@ -81,7 +85,7 @@
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.2s;
         }
 
@@ -90,19 +94,19 @@
         }
 
         .btn-contact-nav {
-            background-color: transparent;
+            background-color: var(--accent-green);
             border: 1px solid var(--accent-green);
-            color: var(--accent-green) !important;
-            padding: 6px 16px;
+            color: #ffffff !important;
+            padding: 7px 18px;
             border-radius: 20px;
             font-weight: 600 !important;
             transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
         }
 
         .btn-contact-nav:hover {
-            background-color: var(--accent-green);
-            color: #0b130e !important;
-            box-shadow: 0 0 12px rgba(52, 211, 153, 0.3);
+            background-color: #047857;
+            box-shadow: 0 6px 16px rgba(5, 150, 105, 0.3);
         }
 
         /* Hero / Header Section */
@@ -117,22 +121,23 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--accent-green);
+            border: 4px solid var(--accent-green);
             margin-bottom: 20px;
-            box-shadow: 0 6px 20px rgba(52, 211, 153, 0.2);
+            box-shadow: 0 8px 24px rgba(5, 150, 105, 0.2);
         }
 
         h1 {
             font-size: 2.5rem;
-            color: #ffffff;
+            color: var(--text-color);
             margin-bottom: 8px;
             letter-spacing: -0.5px;
+            font-weight: 800;
         }
 
         .subtitle {
             color: var(--accent-green);
             font-size: 1.15rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 20px;
         }
 
@@ -152,6 +157,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            font-weight: 500;
         }
 
         .contact-info a:hover {
@@ -170,20 +176,21 @@
 
         h2 {
             font-size: 1.6rem;
-            color: #ffffff;
+            color: var(--text-color);
             margin-bottom: 25px;
             border-left: 4px solid var(--accent-green);
             padding-left: 12px;
+            font-weight: 700;
         }
 
         .about-text {
             color: var(--text-muted);
             font-size: 1.05rem;
             margin-bottom: 15px;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
-        /* Grid & Cards */
+        /* Glassmorphism Cards */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -191,23 +198,28 @@
         }
 
         .card {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 22px;
-            transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s, background 0.25s;
         }
 
         .card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
             border-color: var(--accent-green);
-            background-color: var(--card-hover);
+            background: var(--card-hover);
+            box-shadow: var(--shadow-hover);
         }
 
         .card h3 {
             font-size: 1.2rem;
-            color: #ffffff;
+            color: var(--text-color);
             margin-bottom: 8px;
+            font-weight: 700;
         }
 
         .card p {
@@ -217,32 +229,33 @@
         }
 
         .badge {
-            background-color: rgba(52, 211, 153, 0.12);
+            background-color: rgba(5, 150, 105, 0.1);
             color: var(--accent-green);
-            padding: 4px 12px;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-block;
             margin-bottom: 12px;
-            border: 1px solid rgba(52, 211, 153, 0.2);
+            border: 1px solid rgba(5, 150, 105, 0.2);
         }
 
         .btn {
             display: inline-block;
             background-color: var(--accent-green);
-            color: #0b130e;
+            color: #ffffff;
             padding: 9px 18px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
         }
 
         .btn:hover {
-            background-color: #22c55e;
-            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+            background-color: #047857;
+            box-shadow: 0 6px 16px rgba(5, 150, 105, 0.35);
         }
 
         /* Skills Tags */
@@ -253,39 +266,48 @@
         }
 
         .skill-tag {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--border-color);
             color: var(--text-color);
-            padding: 8px 16px;
+            padding: 9px 18px;
             border-radius: 20px;
             font-size: 0.9rem;
-            font-weight: 500;
-            transition: border-color 0.2s, color 0.2s;
+            font-weight: 600;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.2s ease;
         }
 
         .skill-tag:hover {
             border-color: var(--accent-green);
             color: var(--accent-green);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
 
         /* Experience & Education */
         .experience-item {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 22px;
-            margin-bottom: 18px;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-soft);
         }
 
         .experience-item h3 {
-            color: #ffffff;
+            color: var(--text-color);
             font-size: 1.15rem;
+            font-weight: 700;
         }
 
         .experience-item .role {
             color: var(--accent-green);
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .experience-item .date {
@@ -308,19 +330,22 @@
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            gap: 18px;
             margin-top: 20px;
         }
 
         .contact-card {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 16px;
+            padding: 22px;
             text-align: center;
             text-decoration: none;
             color: var(--text-color);
-            transition: all 0.2s ease;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.25s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -329,23 +354,24 @@
 
         .contact-card:hover {
             border-color: var(--accent-green);
-            transform: translateY(-3px);
-            background-color: var(--card-hover);
+            transform: translateY(-4px);
+            background: var(--card-hover);
+            box-shadow: var(--shadow-hover);
         }
 
         .contact-card i {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--accent-green);
             transition: transform 0.2s;
         }
 
         .contact-card:hover i {
-            transform: scale(1.1);
+            transform: scale(1.12);
         }
 
         .contact-card span {
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         /* Footer */
@@ -361,7 +387,7 @@
             h1 { font-size: 1.9rem; }
             .nav-links { gap: 12px; }
             .nav-links a { font-size: 0.85rem; }
-            .btn-contact-nav { padding: 4px 10px; }
+            .btn-contact-nav { padding: 5px 12px; }
         }
     </style>
 </head>
@@ -397,7 +423,7 @@
         <section id="about">
             <h2>About Me</h2>
             <p class="about-text">
-                I help creators, brands, and businesses turn raw footage into high-engaging viral content tailored specifically to their niche. With a proven track record of reaching over <strong>1.7 Million views</strong> on short-form content, I focus on capturing attention within the first few seconds.
+                I help creators, brands, and businesses turn raw footage into high-engaging viral content tailored specifically to their niche. I focus on capturing attention within the first few seconds to maximize reach and retention.
             </p>
             <p class="about-text">
                 My specialty lies in repurposing long-form content—such as full podcasts, live coaching sessions, and vlogs—into bite-sized, high-retention Reels and TikToks. Beyond video editing, I handle end-to-end media creation including eye-catching thumbnails, photo editing, and short film production.
@@ -425,15 +451,7 @@
             <h2>Featured Work & Portfolio</h2>
             <div class="grid">
 
-                <!-- Project 1: 1.7M Views Reel -->
-                <div class="card">
-                    <span class="badge">🔥 1.7M+ Views Viral Reel</span>
-                    <h3>High-Engagement Short Reel</h3>
-                    <p>Designed and edited for maximum viewer retention and viral reach, tailored to the target audience niche.</p>
-                    <a href="https://www.instagram.com/reel/DaNrYO7kw2H/?stkn=aXowdXB2c2cxeXNu" target="_blank" class="btn">▶ Watch Reel</a>
-                </div>
-
-                <!-- Project 2: Podcast Editing -->
+                <!-- Project 1: Podcast Editing -->
                 <div class="card">
                     <span class="badge">🎙️ Long-Form Podcast Edit</span>
                     <h3>Full Podcast Episode Production</h3>
@@ -441,7 +459,7 @@
                     <a href="https://youtu.be/Kz7ZcUv4xYM?feature=shared" target="_blank" class="btn">▶ Watch on YouTube</a>
                 </div>
 
-                <!-- Project 3: Real Estate / Home Tour -->
+                <!-- Project 2: Real Estate / Home Tour -->
                 <div class="card">
                     <span class="badge">🏠 Real Estate / Vlog Edit</span>
                     <h3>Exclusive Home Tour Reel</h3>
@@ -449,7 +467,7 @@
                     <a href="https://www.instagram.com/reel/DWOz6JignzW/?stkn=Z2Y4bmh0OW93Z2Rw" target="_blank" class="btn">▶ Watch Reel</a>
                 </div>
 
-                <!-- Project 4: Live Coaching Repurpose -->
+                <!-- Project 3: Live Coaching Repurpose -->
                 <div class="card">
                     <span class="badge">🎓 Live Coaching Content</span>
                     <h3>Coaching Session to Short Reel</h3>
@@ -457,7 +475,7 @@
                     <a href="https://www.instagram.com/reel/DWjXTutiGkq/?stkn=NGR4dmlwY2cxMXY1" target="_blank" class="btn">▶ Watch Reel</a>
                 </div>
 
-                <!-- Project 5: Creative Short Reel -->
+                <!-- Project 4: Creative Short Reel -->
                 <div class="card">
                     <span class="badge">🎬 Content Creation</span>
                     <h3>Social Media Reel Edit</h3>

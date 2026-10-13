@@ -117,13 +117,19 @@
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--accent-green);
             margin-bottom: 20px;
-            box-shadow: 0 8px 24px rgba(5, 150, 105, 0.2);
+            box-shadow: 0 10px 28px rgba(5, 150, 105, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 14px 35px rgba(5, 150, 105, 0.35);
         }
 
         h1 {
@@ -409,7 +415,7 @@
     <div class="container">
         <!-- Header / Hero Section -->
         <header>
-            <img src="profile.jpg" alt="Harvey Andrei S. Mendiola" class="profile-img">
+            <img src="IMG_7163.jpeg" alt="Harvey Andrei S. Mendiola" class="profile-img">
             <h1>Harvey Andrei S. Mendiola</h1>
             <p class="subtitle">Social Media Manager & Content Editor</p>
             <div class="contact-info">

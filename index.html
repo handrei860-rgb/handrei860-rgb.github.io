@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harvey Andrei S. Mendiola | Video Editor & Social Media Manager</title>
+    <title>Mendiola Harvey | Video Editor & Social Media Manager</title>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0d0f12;
-            --card-bg: #161a23;
-            --text-color: #e2e8f0;
-            --text-muted: #94a3b8;
-            --accent-color: #38bdf8;
-            --accent-hover: #0284c7;
-            --border-color: #1e293b;
+            --bg-color: #0b130e;          /* Deep Forest Dark */
+            --card-bg: #132018;            /* Dark Emerald Card */
+            --card-hover: #1a2c22;
+            --text-color: #e6ede8;         /* Crisp White-Green */
+            --text-muted: #94a89a;         /* Soft Sage Muted */
+            --accent-green: #34d399;       /* Vibrant Mint Emerald */
+            --accent-sage: #10b981;        /* Forest Sage */
+            --border-color: #1f3829;       /* Deep Olive Border */
+            --nav-bg: rgba(11, 19, 14, 0.85);
         }
 
         * {
@@ -20,86 +24,166 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            padding: 20px;
+            padding-top: 80px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
+        /* Fixed Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .btn-contact-nav {
+            background-color: transparent;
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green) !important;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600 !important;
+            transition: all 0.2s ease;
+        }
+
+        .btn-contact-nav:hover {
+            background-color: var(--accent-green);
+            color: #0b130e !important;
+            box-shadow: 0 0 12px rgba(52, 211, 153, 0.3);
+        }
+
+        /* Hero / Header Section */
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 0 40px;
             border-bottom: 1px solid var(--border-color);
         }
 
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--accent-color);
-            margin-bottom: 15px;
-            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+            border: 3px solid var(--accent-green);
+            margin-bottom: 20px;
+            box-shadow: 0 6px 20px rgba(52, 211, 153, 0.2);
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: #ffffff;
             margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
 
         .subtitle {
-            color: var(--accent-color);
-            font-size: 1.1rem;
+            color: var(--accent-green);
+            font-size: 1.15rem;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
         }
 
         .contact-info a {
             color: var(--text-muted);
             text-decoration: none;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .contact-info a:hover {
-            color: var(--accent-color);
+            color: var(--accent-green);
         }
 
+        /* Sections General */
         section {
-            margin: 40px 0;
+            padding: 50px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #ffffff;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 5px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent-green);
+            padding-left: 12px;
         }
 
         .about-text {
             color: var(--text-muted);
             font-size: 1.05rem;
             margin-bottom: 15px;
+            line-height: 1.7;
         }
 
+        /* Grid & Cards */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -109,14 +193,15 @@
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            transition: transform 0.2s, border-color 0.2s;
+            border-radius: 14px;
+            padding: 22px;
+            transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
         }
 
         .card:hover {
             transform: translateY(-4px);
-            border-color: var(--accent-color);
+            border-color: var(--accent-green);
+            background-color: var(--card-hover);
         }
 
         .card h3 {
@@ -128,67 +213,77 @@
         .card p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
         .badge {
-            background-color: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            padding: 4px 10px;
+            background-color: rgba(52, 211, 153, 0.12);
+            color: var(--accent-green);
+            padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(52, 211, 153, 0.2);
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--accent-color);
-            color: #0d0f12;
-            padding: 8px 16px;
-            border-radius: 6px;
+            background-color: var(--accent-green);
+            color: #0b130e;
+            padding: 9px 18px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: background-color 0.2s;
+            transition: all 0.2s ease;
         }
 
         .btn:hover {
-            background-color: var(--accent-hover);
-            color: #ffffff;
+            background-color: #22c55e;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
         }
 
+        /* Skills Tags */
         .skills-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
 
         .skill-tag {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--text-color);
-            padding: 6px 14px;
+            padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9rem;
+            font-weight: 500;
+            transition: border-color 0.2s, color 0.2s;
         }
 
+        .skill-tag:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        /* Experience & Education */
         .experience-item {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 15px;
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 18px;
         }
 
         .experience-item h3 {
             color: #ffffff;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
 
         .experience-item .role {
-            color: var(--accent-color);
+            color: var(--accent-green);
             font-size: 0.95rem;
             font-weight: 600;
         }
@@ -196,7 +291,7 @@
         .experience-item .date {
             color: var(--text-muted);
             font-size: 0.85rem;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .experience-item ul {
@@ -205,38 +300,101 @@
             font-size: 0.95rem;
         }
 
+        .experience-item li {
+            margin-bottom: 6px;
+        }
+
+        /* Contact Section Grid & Logos */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-3px);
+            background-color: var(--card-hover);
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--accent-green);
+            transition: transform 0.2s;
+        }
+
+        .contact-card:hover i {
+            transform: scale(1.1);
+        }
+
+        .contact-card span {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 0;
             color: var(--text-muted);
             font-size: 0.85rem;
             border-top: 1px solid var(--border-color);
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .grid { grid-template-columns: 1fr; }
+        @media (max-width: 650px) {
+            h1 { font-size: 1.9rem; }
+            .nav-links { gap: 12px; }
+            .nav-links a { font-size: 0.85rem; }
+            .btn-contact-nav { padding: 4px 10px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Top Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">&lt;Mendiola Harvey/&gt;</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn-contact-nav">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
-        <!-- Header -->
+        <!-- Header / Hero Section -->
         <header>
             <img src="profile.jpg" alt="Harvey Andrei S. Mendiola" class="profile-img">
             <h1>Harvey Andrei S. Mendiola</h1>
             <p class="subtitle">Social Media Manager & Content Editor</p>
             <div class="contact-info">
-                <span>📍 Paombong, Bulacan, Philippines</span>
-                <span>📧 <a href="mailto:handrei860@gmail.com">handrei860@gmail.com</a></span>
-                <span>📞 <a href="tel:09453161049">0945-316-1049</a></span>
-                <span>📸 <a href="https://instagram.com/harveyandreii123" target="_blank">@harveyandreii123</a></span>
+                <span><i class="fa-solid fa-location-dot"></i> Paombong, Bulacan, Philippines</span>
+                <a href="mailto:handrei860@gmail.com"><i class="fa-solid fa-envelope"></i> handrei860@gmail.com</a>
+                <a href="tel:09453161049"><i class="fa-solid fa-phone"></i> 0945-316-1049</a>
             </div>
         </header>
 
-        <!-- Pitch & About Section -->
-        <section>
+        <!-- About Section -->
+        <section id="about">
             <h2>About Me</h2>
             <p class="about-text">
                 I help creators, brands, and businesses turn raw footage into high-engaging viral content tailored specifically to their niche. With a proven track record of reaching over <strong>1.7 Million views</strong> on short-form content, I focus on capturing attention within the first few seconds.
@@ -246,8 +404,24 @@
             </p>
         </section>
 
-        <!-- Featured Projects / Portfolio Section -->
-        <section>
+        <!-- Core Skills Section -->
+        <section id="skills">
+            <h2>Core Skills & Capabilities</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Short-Form Video Editing (Reels/TikTok)</span>
+                <span class="skill-tag">Podcast Editing & Content Repurposing</span>
+                <span class="skill-tag">Live Coaching Highlights & Clipping</span>
+                <span class="skill-tag">Vlog Editing & Storytelling</span>
+                <span class="skill-tag">Short Films Production</span>
+                <span class="skill-tag">Eye-Catching Thumbnail Design</span>
+                <span class="skill-tag">Photo Editing & Graphic Assets</span>
+                <span class="skill-tag">Audience Engagement Strategy</span>
+                <span class="skill-tag">Administrative & Spreadsheets Support</span>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects">
             <h2>Featured Work & Portfolio</h2>
             <div class="grid">
 
@@ -294,26 +468,9 @@
             </div>
         </section>
 
-        <!-- Services & Skillset -->
-        <section>
-            <h2>Core Skills & Capabilities</h2>
-            <div class="skills-list">
-                <span class="skill-tag">Short-Form Video Editing (Reels/TikTok)</span>
-                <span class="skill-tag">Podcast Editing & Content Repurposing</span>
-                <span class="skill-tag">Live Coaching Highlights & Clipping</span>
-                <span class="skill-tag">Vlog Editing & Storytelling</span>
-                <span class="skill-tag">Short Films Production</span>
-                <span class="skill-tag">Eye-Catching Thumbnail Design</span>
-                <span class="skill-tag">Photo Editing & Graphic Assets</span>
-                <span class="skill-tag">Audience Engagement Strategy</span>
-                <span class="skill-tag">Administrative & Spreadsheets Support</span>
-            </div>
-        </section>
-
-        <!-- Work Experience -->
+        <!-- Experience Section -->
         <section>
             <h2>Work Experience</h2>
-            
             <div class="experience-item">
                 <h3>Virtual Assistant & Digital Media Support</h3>
                 <p class="role">Tanur Badgely</p>
@@ -327,7 +484,7 @@
             </div>
         </section>
 
-        <!-- Education -->
+        <!-- Education Section -->
         <section>
             <h2>Education & Achievements</h2>
             <div class="experience-item">
@@ -337,6 +494,30 @@
                     <li><strong>Best Research Presentation Award:</strong> "Seating Matters: A Meta-analysis of the effects of seating arrangements on the learning ability of senior high school students."</li>
                     <li><strong>Consistent Honor Student:</strong> Grades 11 - 12</li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- Contact Section with Official Logos -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p class="about-text">Ready to elevate your content or collaborate on a project? Connect with me directly through any of the platforms below:</p>
+            <div class="contact-grid">
+                <a href="https://www.facebook.com/mendiola.harvey.andrei.salzona" target="_blank" class="contact-card">
+                    <i class="fa-brands fa-facebook"></i>
+                    <span>Facebook Profile</span>
+                </a>
+                <a href="https://instagram.com/harveyandreii123" target="_blank" class="contact-card">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="mailto:handrei860@gmail.com" class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Send Email</span>
+                </a>
+                <a href="tel:09453161049" class="contact-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call / SMS</span>
+                </a>
             </div>
         </section>
 
